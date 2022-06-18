@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS car_db;
+
+CREATE DATABASE car_db;
