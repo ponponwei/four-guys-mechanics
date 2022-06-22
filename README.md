@@ -32,4 +32,4 @@
 
   ## Contact
   -GitHubs: [bcheung827](https://github.com/bcheung827), 
-  -Emails: bcheung827@gmail.com, 
+  -Emails: Brandon: bcheung827@gmail.com, David: ddwight16@gmail.com, Chris: chri2chenry@gmail.com, Bossman: ekowbossman@gmail.com
