@@ -1,0 +1,17 @@
+[
+    {
+        "name":"Daniel's Tire Change",
+        "description":"changing Daniel's tires",
+        "needed_funding":10
+    },
+    {
+        "name":"Lucy's Tire Change",
+        "description":"changing Lucy's tires",
+        "needed_funding":11
+    },
+    {
+        "name":"Betty's Tire Change",
+        "description":"changing Betty's tires",
+        "needed_funding":12
+    }
+]
