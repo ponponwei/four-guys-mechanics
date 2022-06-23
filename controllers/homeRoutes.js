@@ -24,7 +24,8 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/appointment/:id', async (req, res) => {
+router.get('/appointments', async (req, res) => {
+  console.log("inside appointments");
   try {
     const appointmentData = await Appointment.findByPk(req.params.id, {
       include: [
@@ -37,10 +38,11 @@ router.get('/appointment/:id', async (req, res) => {
 
     const appointment = appointmentData.get({ plain: true });
     
-    res.render('appointment', {
-        ...appointment,
-        logged_in: req.session.logged_in
-    });
+    // res.render('appointments', {
+    //     ...appointment,
+    //     logged_in: req.session.logged_in
+    // });
+    res.render("appointments", {logged_in: req.session.logged_in});
 } catch (err) {
     res.status(500).json(err);
 }
