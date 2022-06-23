@@ -6,27 +6,12 @@
             <h2>Work Order History</h2>
         </div>
         <ul>
+            {{#each appointments as |appointment|}}
             <li>
-                <p>...</p>
+                <p>{{appointment.name}}</p>
             </li>
-            <li>
-                <p>...</p>
-            </li>
-            <li>
-                <p>...</p>
-            </li>
-            <li>
-                <p>...</p>
-            </li>
-            <li>
-                <p>...</p>
-            </li>
-            <li>
-                <p>...</p>
-            </li>
-            <li>
-                <p>...</p>
-            </li>
+            {{/each}}
+            
         </ul>
     </aside>
 

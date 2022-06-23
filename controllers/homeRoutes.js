@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
 router.get('/appointments', async (req, res) => {
   console.log("inside appointments");
   try {
-    const appointmentData = await Appointment.findByPk(req.params.id, {
+    const appointmentData = await Appointment.findAll( {
       include: [
         {
           model: User,
@@ -36,7 +36,7 @@ router.get('/appointments', async (req, res) => {
       ],
     });
 
-    const appointment = appointmentData.get({ plain: true });
+    const appointments = appointmentData.get({ plain: true });
     
     // res.render('appointments', {
     //     ...appointment,
