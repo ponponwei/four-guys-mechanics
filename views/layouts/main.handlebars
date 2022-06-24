@@ -13,9 +13,19 @@
         <link rel="stylesheet" href="./about.css">
     </head>
     <body>
-        <!-- header -->
+       <nav>
+        <!-- Conditionally render login or logout links -->
+        {{#if logged_in}}
+        <a href="/profile">profile</a> |
+        <button class="no-button" id="logout">logout</button>
+        {{else}}
+        <a href="/login">login</a>
+        {{/if}}
+      </nav>
     <div>
-        <h1>Four Guys Mechanics</h1>
+        <h1>
+            <a href= '/'>Four Guys Mechanics</a>
+            </h1>
         <nav>
             <ul>
                 <li>

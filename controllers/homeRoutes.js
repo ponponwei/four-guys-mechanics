@@ -36,13 +36,13 @@ router.get('/appointments', async (req, res) => {
       ],
     });
 
-    const appointment = appointmentData.get({ plain: true });
+    const appointment = appointmentData.get({ plain: true })
     
-    // res.render('appointments', {
-    //     ...appointment,
-    //     logged_in: req.session.logged_in
-    // });
-    res.render("appointments", {logged_in: req.session.logged_in});
+    res.render('appointments', {
+        ...appointment,
+        logged_in: req.session.logged_in
+    });
+    res.render("appointments");
 } catch (err) {
     res.status(500).json(err);
 }
