@@ -25,6 +25,7 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/appointments', async (req, res) => {
+  console.log("inside appointments");
   try {
     const appointmentData = await Appointment.findAll( {
       include: [
@@ -37,17 +38,19 @@ router.get('/appointments', async (req, res) => {
 
     const appointments = appointmentData.get({ plain: true });
     
-    // res.render('appointments', {
-    //     ...appointment,
-    //     logged_in: req.session.logged_in
-    // });
-    res.render("appointments", {logged_in:req.session.logged_in});
+    res.render('appointments', {
+        ...appointment,
+        logged_in: req.session.logged_in
+    });
+    // res.render("appointments", {logged_in:req.session.logged_in});
 } catch (err) {
     res.status(500).json(err);
 }
 });
 
-router.get('/homepage', async (req, res) => {
+router.get('/homepage', withAuth, async (req, res) => {
+  console.log("homepage");
+  console.log(JSON.stringify(req, null, 2));
   try {
     const userData = await User.findByPk(req.session.user_id, {
         attributes: { exclude: ['password'] },
@@ -55,7 +58,7 @@ router.get('/homepage', async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
-
+      console.log(JSON.stringify(user, null, 2));
     res.render("homepage", {
         ...user,
         logged_in: true
