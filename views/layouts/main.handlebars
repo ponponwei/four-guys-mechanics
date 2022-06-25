@@ -16,12 +16,13 @@
        <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/profile">profile</a> |
+        <a href="/appointments">appointments</a> |
         <button class="no-button" id="logout">logout</button>
         {{else}}
         <a href="/login">login</a>
         {{/if}}
       </nav>
+      {{#if logged_in}}
     <div>
         <h1>
             <a href= '/'>Four Guys Mechanics</a>
@@ -40,7 +41,13 @@
             </ul>
         </nav>
     </div>
+    {{/if}}
     {{{ body }}}
     <!-- Javascript links -->
+    
+  <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
     </body>
 </html>
