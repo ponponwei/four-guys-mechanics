@@ -1,0 +1,66 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1;
+}
+.main {
+    background: rgb(231, 235, 236);
+    height: auto;
+    /* font-size: x-large; */
+    font-weight: 700;
+    padding: 30px;
+    margin: 15px;
+    border-radius: 20px;
+}
+.div-header {
+    padding: 10px;
+}
+ul {
+    padding: 10px;
+}
+
+.menu {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background-color: #c5c5c5;
+    text-align: center;
+    position: sticky;
+    display: inline-block;
+    vertical-align: top;
+    max-height: 100vh;
+    overflow-y: auto;
+    width: 400px;
+    height: auto;
+    top: 0;
+    bottom: 0;
+    padding: 30px;
+}
+
+.car {
+    padding: 40px;
+    font-size: 25px;
+}
+.container {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    text-align: center;
+    width: 500px;
+    height: auto;
+    padding: 50px;
+    background-color: #c5c5c5;
+    margin: 0;
+}
+
+.content {
+    display: inline-block;
+}
+
+footer {
+    height: 60px;
+    width: 100%;
+    line-height: 60px;
+    background-color: #9fc5ba;}
