@@ -25,7 +25,6 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/appointments', async (req, res) => {
-  console.log("inside appointments");
   try {
     const appointmentData = await Appointment.findAll( {
       include: [
@@ -38,11 +37,11 @@ router.get('/appointments', async (req, res) => {
 
     const appointments = appointmentData.get({ plain: true });
     
-    res.render('appointments', {
-        ...appointment,
-        logged_in: req.session.logged_in
-    });
-    res.render("appointments");
+    // res.render('appointments', {
+    //     ...appointment,
+    //     logged_in: req.session.logged_in
+    // });
+    res.render("appointments", {logged_in:req.session.logged_in});
 } catch (err) {
     res.status(500).json(err);
 }
