@@ -37,11 +37,11 @@ router.get('/appointments', async (req, res) => {
 
     const appointments = appointmentData.get({ plain: true });
     
-    // res.render('appointments', {
-    //     ...appointment,
-    //     logged_in: req.session.logged_in
-    // });
-    res.render("appointments", {logged_in:req.session.logged_in});
+    res.render('appointments', {
+        ...appointment,
+        logged_in: req.session.logged_in
+    });
+    // res.render("appointments", {logged_in:req.session.logged_in});
 } catch (err) {
     res.status(500).json(err);
 }
@@ -55,7 +55,7 @@ router.get('/homepage', async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
-
+     
     res.render("homepage", {
         ...user,
         logged_in: true
