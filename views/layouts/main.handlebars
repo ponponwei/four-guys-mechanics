@@ -7,13 +7,28 @@
 
         <title>Four Guys Mechanics</title>
         
-        <link rel="stylesheet" href="./style.css">
-        <link rel="stylesheet" href="./jass.css">
+        
+    
+        <link rel="stylesheet" href="./login.css">
+        <link rel="stylesheet" href="./about.css">
+        <link rel="stylesheet" href="./appointments.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     </head>
     <body>
-        <!-- header -->
+       <nav>
+        <!-- Conditionally render login or logout links -->
+        {{#if logged_in}}
+        <a href="/appointments">appointments</a> |
+        <button class="no-button" id="logout">logout</button>
+        {{else}}
+        <a href="/login">login</a>
+        {{/if}}
+      </nav>
+      {{#if logged_in}}
     <div>
-        <h1>Four Guys Mechanics</h1>
+        <h1>
+            <a href= '/'>Four Guys Mechanics</a>
+            </h1>
         <nav>
             <ul>
                 <li>
@@ -28,7 +43,13 @@
             </ul>
         </nav>
     </div>
+    {{/if}}
     {{{ body }}}
     <!-- Javascript links -->
+    
+  <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
     </body>
 </html>
